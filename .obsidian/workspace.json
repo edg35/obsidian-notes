@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "7d06ca00508d23d3",
+    "type": "split",
+    "children": [
+      {
+        "id": "0568d9233bb74d23",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa82f0e5f50100c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Leveraging the Cloud for Digital Transformation"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1e83457fd727f112",
+    "type": "split",
+    "children": [
+      {
+        "id": "500e38834400fba6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65045a392402de7e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "11fc63e3b26c296c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5f405f4c2329e1ae",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "82669b7c693bc7c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "cb38145bb9b5777b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2b324974da5cf5aa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Computer Science/Comp Arch/CS211 Exam Review.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for CS211 Exam Review"
+            }
+          },
+          {
+            "id": "bc2ddbf567699316",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Computer Science/Comp Arch/CS211 Exam Review.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from CS211 Exam Review"
+            }
+          },
+          {
+            "id": "2fdce6c2d48a323a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "784bd14c4fbf52e0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Leveraging the Cloud for Digital Transformation"
+            }
+          },
+          {
+            "id": "a2a19edc0b91a2d6",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 386.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "aa82f0e5f50100c6",
+  "lastOpenFiles": [
+    "Screenshot 2025-05-02 at 4.49.40 PM.png",
+    "Screenshot 2025-05-02 at 4.47.33 PM.png",
+    "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
+    "Screenshot 2025-05-02 at 4.44.00 PM.png",
+    "Computer Science/Projects/Veritas.md",
+    "Computer Science/AWS/solution arch/images/Screenshot 2025-04-21 at 9.53.15 PM.png",
+    "Computer Science/AWS/solution arch/chapters/Understanding the AWS Well-Architected Framework and Getting Certified.md",
+    "Computer Science/AWS/cloud practitoner/Security and Compliance.md",
+    "Computer Science/AWS/solution arch/concepts/Proof of Concept.md",
+    "Computer Science/AWS/solution arch/concepts/Cost Comparison Between Models.md",
+    "Computer Science/AWS/solution arch/concepts/Cloud Strategy Decision Matrix.md",
+    "Computer Science/AWS/cloud practitoner/Storage.md",
+    "Computer Science/AWS/cloud practitoner/AWS Computing.md",
+    "Computer Science/AWS/cloud practitoner/Benefits of AWS.md",
+    "Computer Science/AWS/cloud practitoner/AWS Global Infrastructure.md",
+    "Computer Science/AWS/cloud practitoner/Networking in AWS.md",
+    "Cloud computing models.md",
+    "Computer Science/Saas/Concepts/SaaS.md",
+    "Computer Science/Saas/Chapters/The Playbook For Building a Multi-Million Dollar SaaS.md",
+    "Computer Science/AWS/solution arch/images/Screenshot 2025-04-21 at 9.14.19 PM 3.png",
+    "Screenshot 2025-04-21 at 9.14.19 PM 2.png",
+    "Screenshot 2025-04-21 at 9.14.19 PM 1.png",
+    "Screenshot 2025-04-21 at 9.14.19 PM.png",
+    "Computer Science/AWS/solution arch/concepts",
+    "Computer Science/AWS/solution arch/chapters",
+    "Computer Science/AWS/solution arch/images",
+    "Hair Care/Routine.md",
+    "Computer Science/AWS/solution arch",
+    "Inbox/Understanding Healthy Eating.md",
+    "Books to Read.md",
+    "Work/Final Development Tasks Before UAT.md",
+    "Work/UAT Readiness Checklist.md",
+    "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113132645.png",
+    "Work",
+    "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113130855.png",
+    "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113123055.png",
+    "Computer Science/AWS/cloud practitoner/images",
+    "Computer Science/AWS/cloud practitoner/AWS products",
+    "Computer Science/Comp Arch/CS211 Exam Review.md",
+    "Computer Science/AWS/cloud practitoner",
+    "Computer Science/AWS",
+    "Computer Science/AWS.md",
+    "Computer Science/Data Managment/Lecture 0.md",
+    "Computer Science/Data Managment/Recitation 0.md",
+    "Stocks/How to Start Trading/Stocks.md",
+    "Stocks/How to Start Trading",
+    "Untitled.canvas"
+  ]
+}

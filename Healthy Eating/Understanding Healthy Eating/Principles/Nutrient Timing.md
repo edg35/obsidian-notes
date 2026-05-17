@@ -1,0 +1,1 @@
+Definition: How often you eat and how you space out your meals  and snacks.

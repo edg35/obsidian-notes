@@ -1,0 +1,1 @@
+Definition: How much of each of proteins, carbs, and fats you are  eating on average per day.

@@ -1,0 +1,9 @@
+{
+  "amazonRegion": "global",
+  "highlightsFolder": "Inbox",
+  "lastSyncMode": "amazon",
+  "isLoggedIn": true,
+  "syncOnBoot": true,
+  "downloadBookMetadata": true,
+  "lastSyncDate": "2024-10-26T20:21:03.750Z"
+}

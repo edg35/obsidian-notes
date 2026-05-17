@@ -1,0 +1,1 @@
+Definition: How much fluid you take in from food and drink.

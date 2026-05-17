@@ -1,0 +1,2 @@
+- Git is a version control system that allows you to track changes you or your coworkers make over time
+- With Git, you are able see history over time and roll back to a previous version in seconds
