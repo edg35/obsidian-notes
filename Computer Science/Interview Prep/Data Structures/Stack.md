@@ -121,3 +121,7 @@ class Solution {
 }
 ```
 
+
+## Used In
+- [[Depth-First Search]]
+- [[Topological Sort]]

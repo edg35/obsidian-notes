@@ -144,3 +144,8 @@ class Solution {
 }
 ```
 
+
+## Used In
+- [[Dijkstra's Algorithm]]
+- [[Prim's Algorithm]]
+- [[Greedy Algorithm]]

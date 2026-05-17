@@ -37,3 +37,7 @@ Queues can be implemented using either arrays or linked lists.
   
 ### Examples
 
+
+## Used In
+- [[Breadth-First Search]]
+- [[Ford-Fulkerson]]

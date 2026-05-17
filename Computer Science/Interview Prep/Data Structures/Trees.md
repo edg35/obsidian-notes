@@ -224,3 +224,7 @@ class Solution {
 
 
 
+
+## Used In
+- [[Prim's Algorithm]]
+- [[Greedy Algorithm]]

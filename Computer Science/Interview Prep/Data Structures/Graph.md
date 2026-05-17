@@ -318,3 +318,13 @@ class Source {
   }
 }  
 ```
+
+## Used In
+- [[Breadth-First Search]]
+- [[Depth-First Search]]
+- [[Dijkstra's Algorithm]]
+- [[Bellman-Ford]]
+- [[Prim's Algorithm]]
+- [[Kruskal's Algorithm]]
+- [[Topological Sort]]
+- [[Ford-Fulkerson]]

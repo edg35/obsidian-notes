@@ -156,3 +156,10 @@ class Solution {
 	}
 }
 ```
+## Related Data Structures
+- [[Stack]] — DFS uses a stack (call stack in recursion, explicit stack iteratively)
+- [[Graph]] — primary structure traversed by DFS
+
+## Related Algorithms
+- [[Topological Sort]] — DFS post-order produces a topological ordering
+- [[Backtracking]] — backtracking is DFS with pruning
