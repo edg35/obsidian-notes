@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0568d9233bb74d23",
+        "id": "171be6de3dbb0712",
         "type": "tabs",
         "children": [
           {
-            "id": "aa82f0e5f50100c6",
+            "id": "ed77dae3b71bb78a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Leveraging the Cloud for Digital Transformation"
+              "title": "New tab"
             }
           }
         ]
@@ -141,13 +137,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Leveraging the Cloud for Digital Transformation"
+              "title": "Outline"
             }
           },
           {
@@ -156,8 +151,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           }
         ],
@@ -165,21 +160,34 @@
       }
     ],
     "direction": "horizontal",
-    "width": 386.5
+    "width": 386.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "aa82f0e5f50100c6",
+  "active": "ed77dae3b71bb78a",
   "lastOpenFiles": [
+    "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
+    "Computer Science/Courses + Certs/Security+/How to pass CompTIA Security+.md",
+    "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
+    "Computer Science/Knowledge Base/Git.md",
+    "Computer Science/Courses + Certs/Security+/Untitled",
+    "here.md",
+    "Computer Science/Courses + Certs/Algorithms/Algorithms MOC.md",
+    "Computer Science/Courses + Certs/Security+",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "Untitled.base",
     "Screenshot 2025-05-02 at 4.49.40 PM.png",
     "Screenshot 2025-05-02 at 4.47.33 PM.png",
     "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
@@ -215,17 +223,6 @@
     "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113132645.png",
     "Work",
     "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113130855.png",
-    "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113123055.png",
-    "Computer Science/AWS/cloud practitoner/images",
-    "Computer Science/AWS/cloud practitoner/AWS products",
-    "Computer Science/Comp Arch/CS211 Exam Review.md",
-    "Computer Science/AWS/cloud practitoner",
-    "Computer Science/AWS",
-    "Computer Science/AWS.md",
-    "Computer Science/Data Managment/Lecture 0.md",
-    "Computer Science/Data Managment/Recitation 0.md",
-    "Stocks/How to Start Trading/Stocks.md",
-    "Stocks/How to Start Trading",
     "Untitled.canvas"
   ]
 }
