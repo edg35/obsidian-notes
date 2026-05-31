@@ -4,7 +4,6 @@ tags:
 ---
 # 1.1
 ## Security Controls
-
 - security risks are out there and there are many types to consider
 - assets are also varied
 	- data, physical property, computer systems
@@ -104,7 +103,6 @@ tags:
 	- post a sign for "Authorized Personnel Only"
 
 ### Managing Security Tools
-
 - these are not inclusive lists
 	- there are many categories of control
 	- some orgs will combine types
@@ -117,7 +115,6 @@ tags:
 # 1.2
 
 ## The CIA Triad
-
 - Combination of principles
 	- fundamentals of security
 	- sometimes referenced as the AIC Triad
@@ -205,3 +202,63 @@ tags:
 ![[Screenshot 2026-05-30 220407.png]]
 
 ## Authentication, Authorization, and Accounting
+Also Known as the AAA framework (triple a)
+- identification
+	- this is **who you say you are**
+	- username
+- authentication
+	- **prove you are who you say you are**
+	- password and other authentication factors
+- authorization
+	- based on your identification and authentication, **what access do you have?**
+- accounting
+	- resources used: login time, data sent and received, logout time
+
+![[Screenshot 2026-05-31 094854.png]]
+
+### Authentication systems
+- you may have to manage many devices
+	- often devices that you'll never physically see
+- a system can't type a password
+	- and you may not want to store one
+- how can you truly authenticate a device?
+	- generally, you put a digitally signed certificate on the device
+- other business process rely on the certificate
+	- access to the vpn from authorized devices
+	- management software can validate the end device
+
+### Certificate authentication
+ - an org has a trusted certificate authority (CA)
+	 - most orgs maintain their own CAs
+- the organization creates a certificate for a device
+	- and digitally signs the certificate with the orgs CA
+- the certificate can now be included on a device as an authentication factor
+	- the CAs digital signature is used to validate the certificate
+
+### Authorization Model
+- the user or device has now authenticated
+	- to what do they have access?
+	- time to apply an authorization model
+- users and services -> data and applications
+	- associating individual users to access rights does not scale
+- put an authorization model in the middle
+	- define by roles, organizations, attributes etc.
+
+### No Authorization Model
+- a simple relationship
+	- user -> resource
+- some issues with this method
+	- difficult to understand why an authorization may exist
+	- does not scale
+
+![[Screenshot 2026-05-31 100543.png]]
+
+### Using an authorization model
+- add an abstraction
+	- reduce complexity
+	- create a clear relationship between the user and the resource
+- administrator is streamlined
+	- easy to understand the authorizations
+	- support any number of users or resources
+
+## Gap Analysis

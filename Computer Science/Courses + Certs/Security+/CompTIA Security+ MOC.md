@@ -11,4 +11,5 @@
 	- CIA Triad
 	- Non-repudiation
 	- Authorization, Authentication, Accounting
+	- Gap Analysis
 
