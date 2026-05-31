@@ -11,18 +11,16 @@
             "id": "ed77dae3b71bb78a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
-                "mode": "source",
-                "source": false
+                "file": "Assets/Screenshot 2026-05-30 220017 1.png"
               },
-              "icon": "lucide-file",
-              "title": "General Security Concepts"
+              "icon": "lucide-image",
+              "title": "Screenshot 2026-05-30 220017 1"
             }
           },
           {
-            "id": "3877bfede2aef9cd",
+            "id": "ce87883fa77f5a58",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -33,20 +31,6 @@
               },
               "icon": "lucide-file",
               "title": "CompTIA Security+ MOC"
-            }
-          },
-          {
-            "id": "366f61e563489d5b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Science/Courses + Certs/Security+/How to pass CompTIA Security+.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "How to pass CompTIA Security+"
             }
           }
         ]
@@ -106,8 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "82669b7c693bc7c3",
@@ -169,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
+                "file": "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of General Security Concepts"
+              "title": "Outline of CompTIA Security+ MOC"
             }
           },
           {
@@ -208,19 +191,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ed77dae3b71bb78a",
+  "active": "65045a392402de7e",
   "lastOpenFiles": [
-    "Computer Science/Courses + Certs/Security+/How to pass CompTIA Security+.md",
+    "New folder",
+    "Untitled",
     "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
     "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
-    "Computer Science/Knowledge Base/Git.md",
-    "Computer Science/Courses + Certs/Security+/Untitled",
-    "here.md",
-    "Computer Science/Courses + Certs/Algorithms/Algorithms MOC.md",
-    "Computer Science/Courses + Certs/Security+",
+    "Assets/Screenshot 2026-05-30 220407.png",
+    "Computer Science/Courses + Certs/Security+/assets",
+    "Assets/Screenshot 2026-05-30 220017 1.png",
+    "Screenshot 2026-05-30 220017.png",
+    "Untitled.base",
+    "Computer Science/Courses + Certs/Security+/How to pass CompTIA Security+.md",
     "Untitled 2.base",
     "Untitled 1.base",
-    "Untitled.base",
+    "Computer Science/Courses + Certs/Security+",
+    "Computer Science/Knowledge Base/Git.md",
+    "here.md",
+    "Computer Science/Courses + Certs/Algorithms/Algorithms MOC.md",
     "Screenshot 2025-05-02 at 4.49.40 PM.png",
     "Screenshot 2025-05-02 at 4.47.33 PM.png",
     "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
@@ -243,7 +231,6 @@
     "Computer Science/AWS/solution arch/images/Screenshot 2025-04-21 at 9.14.19 PM 3.png",
     "Screenshot 2025-04-21 at 9.14.19 PM 2.png",
     "Screenshot 2025-04-21 at 9.14.19 PM 1.png",
-    "Screenshot 2025-04-21 at 9.14.19 PM.png",
     "Computer Science/AWS/solution arch/concepts",
     "Computer Science/AWS/solution arch/chapters",
     "Computer Science/AWS/solution arch/images",
@@ -252,10 +239,6 @@
     "Inbox/Understanding Healthy Eating.md",
     "Books to Read.md",
     "Work/Final Development Tasks Before UAT.md",
-    "Work/UAT Readiness Checklist.md",
-    "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113132645.png",
-    "Work",
-    "Computer Science/AWS/cloud practitoner/images/Pasted image 20250113130855.png",
     "Untitled.canvas"
   ]
 }

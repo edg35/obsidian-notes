@@ -11,28 +11,28 @@ tags:
 - prevent security events, minimize the impact, and limit the damage
 	- security controls
 
-## Control Categories
+### Control Categories
 **4 main control categories**
-### Technical Controls
+#### Technical Controls
 - Controls implemented using systems
 - operating system controls
 - firewalls, antivirus
 
-### Managerial Controls
+#### Managerial Controls
 - administrative controls associated with security design and implementation
 - security polices, standard operating procedures
 
-### Operational Controls
+#### Operational Controls
 - controls implemented by people instead of systems
 - security guards, awareness programs
 
-### Physical Controls
+#### Physical Controls
 - Limit access
 - guard shack
 - fences, locks
 - badge readers
 
-## Control Types and Categories
+### Control Types and Categories
 **Control Type examples**
 
 | Categories  | Preventative       | Deterrent      | Detective        | Corrective                   | Compensating                    | Directive                |
@@ -42,7 +42,7 @@ tags:
 | Operational | Gaurd Shack        | Reception desk | Property Patrols | Contact authorities          | Require multiple security staff | security policy training |
 | Physical    | Door Lock          | Warning sgns   | Motion detectors | Fire extinguisher            | Power generator                 | signs                    |
 
-### Preventive Control Types
+#### Preventive Control Types
 - preventive
 	- block access to a resource
 	- you shall not pass
@@ -52,7 +52,7 @@ tags:
 	- guard shack checks all identification
 	- enable door locks
 
-### Deterrent Control Types
+#### Deterrent Control Types
 - deterrent
 	- discourage an intrusion attempt
 	- does not directly prevent access
@@ -62,7 +62,7 @@ tags:
 	- front reception desk
 	- posted warning signs
 
-### Detective Control Type
+#### Detective Control Type
 - detective
 	- identify and log an intrusion attempt
 	- may not prevent access
@@ -72,7 +72,7 @@ tags:
 	- regularly patrol the property
 	- enable motion detectors
 
-### Corrective Control Type
+#### Corrective Control Type
 - apply a control after an event has been detected
 - reverse the impact of an event
 - continue operating with minimal downtime
@@ -82,7 +82,7 @@ tags:
 	- create policies for reporting security issues
 	- contact law enforcement to manage criminal activity
 	- use a fire extinguisher
-### Compensating control type
+#### Compensating control type
 - control using other means
 - existing controls aren't sufficient
 - may be temporary
@@ -93,7 +93,7 @@ tags:
 	- require simultaneous guard duties
 	- generator used after power outage
 
-### Directive control types
+#### Directive control types
 - direct a subject toward security compliance
 - a relatively weak security control
 
@@ -103,7 +103,7 @@ tags:
 	- train users on proper security policy
 	- post a sign for "Authorized Personnel Only"
 
-## Managing Security Tools
+### Managing Security Tools
 
 - these are not inclusive lists
 	- there are many categories of control
@@ -158,3 +158,50 @@ tags:
 	- close security holes
 
 ## Non-repudiation
+- you cant deny what you've said
+	- there's no taking it back
+- sign a contract
+	- your signature adds non-repudiation
+	- you really did sign the contract
+	- others can see your signature
+- Adds a different perspective for cryptography
+	- proof of integrity
+	- proof of origin, with high assurance of authenticity
+
+### Proof of integrity
+- verify data does not change
+	- the data remains accurate and consistent
+- in cryptography, we use a hash
+	- represents data as a short string of text
+	- a message digest, a fingerprint
+- if the data changes, the hash changes
+	- if the person changes, you get a different fingerprint
+- doesn't necessarily associate data with an individual
+	- only tells you if the data has changed
+
+### Hashing the encyclopedia
+- Lets say you were to download the text version of an encyclopedia (8.1 megabytes) and use an application to hash it.
+	- djkaslfhuiopgnuiojp37yu8940432q89tpweriotnqwerntjhkrel;hqiopthruioepq89ut4prui
+- Then change one character and rehash it again
+	- fbnhdjluirnmkldsjkklfhjdskaljklgfjkdslnjgkl48u39p04hj4k3klh3jl4h3jkl43ghsduid9osaffhj
+- If the hashes are different, something has changed
+	- the data is compromised somewhere, run a diff to find it
+
+### Proof of Origin
+- prove  the message was not change
+	- integrity
+- prove the source of the message
+	- authentication
+- make sure the signature isn't fake
+	- non-repudiation
+- sign with the private key
+	- the message doesn't need to be encrypted
+	- nobody else can sign the (obviously)
+- verify with the public key
+	- any changes to the message will invalidate the signature
+
+![[Screenshot 2026-05-30 220017 1.png]]
+
+![[Screenshot 2026-05-30 220407.png]]
+
+## Authentication, Authorization, and Accounting
