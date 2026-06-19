@@ -262,3 +262,40 @@ Also Known as the AAA framework (triple a)
 	- support any number of users or resources
 
 ## Gap Analysis
+- where you are comparted with where you want to be
+	- the gap between the two
+- This may require extensive research
+- this can take weeks or months
+	- extensive study with numerous participants
+	- get ready for emails, data gathering and technical research
+
+### Choosing the Framework
+- work towards a known baseline
+	-  this may be an internal set of goals
+	- some orgs should use formal standards
+- determine the end goal
+	- NIST special publications
+	- ISO/IEC
+
+### Evaluate people and process
+- get a baseline of employees
+	- formal experience
+	- current training
+	- knowledge of polices
+- examine the current processes
+	- research existing IT systems and polices
+
+### Compare and Contrast
+- the comparison
+	- evaluate existing systems
+- identify weaknesses
+- a detailed analysis
+
+### The analysis and report
+- the final comparison
+	- detailed baseline vs where we are today
+- need a path to get from the current security to the goal
+- time to create the gap analysis report
+	- formal description of current state
+
+## Zero Trust

@@ -12,4 +12,5 @@
 	- Non-repudiation
 	- Authorization, Authentication, Accounting
 	- Gap Analysis
+	- Zero Trust
 
