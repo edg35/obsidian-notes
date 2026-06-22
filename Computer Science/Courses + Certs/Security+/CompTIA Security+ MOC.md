@@ -13,4 +13,5 @@
 	- Authorization, Authentication, Accounting
 	- Gap Analysis
 	- Zero Trust
+	- Physical Security Controls
 

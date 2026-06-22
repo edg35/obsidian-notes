@@ -299,3 +299,166 @@ Also Known as the AAA framework (triple a)
 	- formal description of current state
 
 ## Zero Trust
+- many networks are relatively open on the outside
+	- once you are through the firewall there are few security controls
+- zero trust is a holistic approach to network security
+- everything must b verified
+	- nothing is trusted
+	- multifactor, encryption, system permissions, additional; firewalls, monitoring and analytics
+
+### Planes of operation
+- split the network into functional planes
+- data plane
+	- process the frameworks, packets, and network data
+	- processing, forwarding, trucking, encryption, NAT
+- control plane
+	- manage actions in data plane
+	- policies and rules
+	- how packets should be forwarded
+	- routing tables, session, NAT tables
+
+![[Screenshot 2026-06-19 090516.png]]
+
+### Adaptive Identity
+
+**Adaptive identity**: An authentication approach that evaluates contextual factors beyond just credentials to determine appropriate security controls.
+
+Factors examined:
+
+- Source IP address and geolocation (e.g., US-based resource accessed from a Chinese IP)
+- Relationship to the organization (employee, contractor, full-time, part-time)
+- Physical location
+- Type of connection
+- Any other available contextual signals
+- The system automatically triggers stronger authentication when contextual risk is elevated
+
+### Limiting Entry Points / Threat Scope Reduction
+
+- Restrict network entry to specific methods only (e.g., on-premises access or VPN — no other methods)
+- Reducing entry points limits the attack surface available to unauthorized users
+
+### Policy-Driven Access Control
+
+**Policy-driven access control**: Aggregates all identity and context data points to determine the appropriate authentication method for a given access request.
+
+### Security Zones
+
+**Security zones**: Network segments categorized by trust level, used to define access rules based on where a connection originates and where it is trying to reach.
+
+Common zone types:
+
+- Untrusted (external/internet
+- Trusted (corporate offices, internal users)
+- Internal (data centers, servers)
+- VPN or department-specific zones
+- Rules can explicitly deny traffic from untrusted → trusted zones
+- **Implicit trust**: Communication between two trusted zones (e.g., trusted → internal) can be automatically allowed by policy
+
+### Zero Trust Policy Components
+
+**Policy Enforcement Point (PEP)**: Acts as the network gatekeeper — all traffic passes through it. Collects information about traffic/users but does not make allow/deny decisions itself. Forwards that data to the Policy Decision Point.
+
+**Policy Decision Point (PDP)**: Responsible for evaluating authentication and deciding whether traffic should be allowed. Composed of two sub-components:
+
+- **Policy Engine**: Compares incoming requests against predefined security policies and outputs a decision: grant, deny, or revoke.
+- **Policy Administrator**: Receives the Policy Engine's decision and communicates it back to the PEP. Creates and distributes any resulting access tokens or credentials.
+
+### Zero Trust Data Flow (End-to-End)
+
+1. Subject/system in an **untrusted zone** initiates a request over the **data plane**
+2. Traffic passes through the **Policy Enforcement Point (PEP)**
+3. PEP forwards context to the **Policy Administrator**
+4. Policy Administrator relays it to the **Policy Engine**
+5. Policy Engine evaluates against security policies → issues grant/deny/revoke
+6. Decision flows back: Policy Engine → Policy Administrator → PEP
+7. If granted, PEP allows access to the **trusted zone** and the requested **Enterprise Resource**
+
+#### Acronyms
+
+|Acronym|Full Name|Description|
+|---|---|---|
+|PEP|Policy Enforcement Point|Gatekeeper that collects traffic info and enforces access decisions|
+|PDP|Policy Decision Point|Evaluates requests; contains the Policy Engine and Policy Administrator|
+|NAT|Network Address Translation|Remaps IP addresses; configured in the control plane|
+|MFA|Multi-Factor Authentication|Required login step in zero trust environments|
+|VPN|Virtual Private Network|Controlled entry point in a zero trust network|
+
+## Physical Security Controls
+
+### Barricades and Bollards
+
+**Bollard/barricade**: A physical barrier used to channel people through designated access points and prevent vehicles from entering a secured area.
+
+- Often made of concrete; can also be water barriers requiring bridge access
+- Brightly colored bollards serve as a visible security notice for high-security areas
+- Allow pedestrian passage while blocking cars, trucks, and other vehicles
+
+### Access Control Vestibule
+
+**Access control vestibule**: A room that must be passed through to gain access to the rest of a building; controls entry by ensuring only one door can be open at a time.
+
+Three common configurations:
+
+1. **All doors normally unlocked** — opening one door prevents others from opening while it remains open
+2. **All doors normally locked** — badging in unlocks the first door; all others remain locked until it closes
+3. **One door always locked, one always unlocked** — opening the unlocked door prevents the locked door from being opened
+
+- May allow one person at a time or a controlled group
+- Common in large data centers and high-security facilities
+- Often combined with card/biometric readers and a security checkpoint inside
+
+### Fencing
+
+- Provides a visible, robust perimeter barrier
+- **Transparent fence**: allows visibility of what's beyond it
+- **Opaque fence**: conceals what's on the other side
+- High-security fencing may include increased height and razor wire to prevent climbing
+
+### Cameras / CCTV
+
+**CCTV (Closed Circuit Television)**: A networked system of cameras that feed video to a single centralized storage point for recording and monitoring.
+
+- Modern cameras include **motion detection**, **object detection**, **facial recognition**, and **license plate reading**
+- All cameras send video to one storage location for continuous recording
+
+#### Acronyms
+
+|Acronym|Full Name|Description|
+|---|---|---|
+|CCTV|Closed Circuit Television|Private camera network; feeds to centralized storage|
+
+### Security Guards
+
+- Validate that individuals entering a building are employees or authorized guests
+- Often work in pairs for **two-person integrity** — ensures no single guard can unilaterally circumvent security policy; provides checks and balances
+
+### Identification Badges
+
+- Worn visibly at all times (lanyard or attached to clothing)
+- Contains photo, name, and individual details
+- Integrated with electronic door locks — badge access events are logged to a central database
+
+### Lighting
+
+- Illuminating dark areas deters unauthorized entry — attackers prefer to operate out of sight
+- Proper lighting angles matter for camera-based facial recognition
+- Parking lots: lighting + 24/7 camera monitoring is a common combination
+
+### Sensors and Motion Detection
+
+**Infrared sensors**: Detect infrared radiation to identify motion in both lit and dark environments; used in cameras and motion detectors. Best suited for limited/small areas.
+
+**Pressure sensors**: Detect changes in force as someone moves across a surface; triggers an alert when pressure is sensed.
+
+**Microwave sensors**: Detect motion over large areas; more effective than infrared for wide-area coverage.
+
+**Ultrasonic sensors**: Emit ultrasonic signals and detect reflected sound waves to identify motion; can also be used for collision detection in parking lots or loading zones.
+
+#### Sensor Comparison
+
+|Sensor Type|Detection Method|Best Use Case|
+|---|---|---|
+|Infrared|Infrared radiation|Small/limited areas, dark environments|
+|Pressure|Force/weight change|Floor-based intrusion detection|
+|Microwave|Microwave signal reflection|Large open areas|
+|Ultrasonic|Sound wave reflection|Motion + collision detection|

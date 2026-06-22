@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "82669b7c693bc7c3",
@@ -197,6 +198,7 @@
   "lastOpenFiles": [
     "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
     "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
+    "Screenshot 2026-06-19 090516.png",
     "Assets/Screenshot 2026-05-31 100543.png",
     "Assets/Screenshot 2026-05-31 094854.png",
     "Assets/Screenshot 2026-05-30 220017 1.png",
@@ -232,7 +234,6 @@
     "Cloud computing models.md",
     "Computer Science/Saas/Concepts/SaaS.md",
     "Computer Science/Saas/Chapters/The Playbook For Building a Multi-Million Dollar SaaS.md",
-    "Computer Science/AWS/solution arch/images/Screenshot 2025-04-21 at 9.14.19 PM 3.png",
     "Computer Science/AWS/solution arch/concepts",
     "Computer Science/AWS/solution arch/chapters",
     "Computer Science/AWS/solution arch/images",
