@@ -462,3 +462,135 @@ Three common configurations:
 |Pressure|Force/weight change|Floor-based intrusion detection|
 |Microwave|Microwave signal reflection|Large open areas|
 |Ultrasonic|Sound wave reflection|Motion + collision detection|
+## Deception and Disruption Technologies
+
+### Honeypots
+
+**Honeypot**: A decoy system designed to attract attackers and observe their techniques without exposing real production systems.
+
+- Attackers (usually automated processes) interact with fake systems while defenders monitor what attack methods and automation are being used
+- Creates a race between defenders making honeypots more realistic and attackers developing techniques to detect them
+- Built using commercial or open-source software
+- Resource: projecthoneypot.org
+
+### Honeynets
+
+**Honeynet**: A larger, more complex deception environment built by combining multiple honeypots into a full fake infrastructure.
+
+- May include workstations, servers, routers, and firewalls to appear as a legitimate network
+- More believable than a single honeypot; keeps attackers occupied longer
+
+### Honeyfiles
+
+**Honeyfile**: A fake file placed on a system containing fabricated or worthless data, designed to look attractive to an attacker.
+
+- Example: a file named `passwords.txt` that contains no real credentials
+- No legitimate users should ever access these files in normal operation
+- Accessing or opening a honeyfile triggers an alert/alarm to a management station — indicates unauthorized activity
+
+### Honeytokens
+
+**Honeytoken**: A piece of traceable fake data placed in a system or network; if the data is copied and distributed externally, defenders can trace its origin and identify the attacker.
+
+Examples of honeytokens:
+
+- **Fake API credentials** posted to a public cloud share — not real/usable, but monitored for use
+- **Fake email addresses** — monitored for appearance elsewhere on the internet; can identify who leaked them
+- **Database records**, **browser cookies**, **web page pixels**, or any other falsifiable data that can be tracked if redistributed
+
+### Key Distinctions
+
+|Term|Scope|Purpose|
+|---|---|---|
+|Honeypot|Single decoy system|Attract and observe attackers|
+|Honeynet|Full fake infrastructure (multiple honeypots)|More realistic environment to engage attackers|
+|Honeyfile|Fake file on a system|Detect unauthorized file access|
+|Honeytoken|Traceable fake data|Identify data exfiltration and trace attacker identity|
+
+# 1.3
+
+## Change Management
+
+### Overview
+
+**Change management**: A formal process for controlling changes to systems, applications, and infrastructure in an organization to maintain uptime, availability, and security.
+
+- Uncontrolled changes can cause application inconsistencies, outages, and security gaps
+- Defines how often changes can be made, what types are allowed, and rollback procedures
+- Should be documented in standard operating procedures accessible to all staff
+- No changes should be made without formal approval
+
+### Change Control Process (Typical Steps)
+
+1. **Submit a change control form** — standardized form submitted to a central change control board (CCB)
+2. **Document the reason** for the change
+3. **Define the scope** — single system or multiple systems
+4. **Schedule the change** — specify date and time
+5. **Identify affected systems** and the impact of the change
+6. **Risk analysis** — CCB weighs risk of making vs. not making the change
+7. **CCB decision** — change is approved or denied
+8. **Implement the change**
+9. **User testing and verification** — confirm no issues after the change
+
+### Roles in Change Management
+
+**Owner**: The person or department that owns the application or data being changed.
+
+- Initiates the change request
+- Does NOT control the change process or make the change themselves
+- Kept informed throughout the process
+- Responsible for testing and verifying the system after the change is complete
+
+**Stakeholders**: Individuals or departments impacted by a proposed change.
+
+- May not be immediately obvious — changes can have unexpected downstream effects
+- Should have input on the process and scheduling
+- IT must proactively identify all stakeholders
+
+> Example: Upgrading shipping label software seems isolated but can affect accounting reports, delivery timelines, revenue recognition, and executive visibility.
+
+### Risk Analysis
+
+Every change carries risk in both directions:
+
+**Risks of making the change:**
+- Fix doesn't resolve the problem
+- Update breaks something else
+- OS failure caused by the patch
+- Data corruption (requires backups)
+
+**Risks of NOT making the change:**
+
+- Security vulnerability remains exploitable
+- Application becomes unavailable
+- Dependent services stop functioning
+- Risk is typically categorized as **high, medium, or low**
+### Sandbox Testing
+
+**Sandbox**: An isolated test environment that mirrors production; used to safely test changes with no impact on live systems.
+
+- Load a duplicate of the production environment
+- Apply the patch/change and observe results
+- Test **backout procedures** even if the change works — confirms rollback steps are valid before going to production
+
+### Backout Plan
+
+**Backout plan**: A documented set of steps to revert a system to its original state if a change causes problems.
+
+- Always take a **full backup** before making any change — last resort if both the change and the backout plan fail
+- Simple backouts: uninstall the patch and verify original files are restored
+- Complex changes may require additional reversion techniques
+- Many outages have occurred because someone skipped a backout plan for a "minor" change
+
+### Change Scheduling
+
+- Avoid changes during business hours when users are active
+- Use **off-hours or maintenance windows** (nights, weekends, holidays)
+- 24/7 environments have very limited maintenance windows
+- **Change freezes**: Some organizations (e.g., retail) freeze all changes during peak seasons (e.g., Thanksgiving–New Year's)
+
+### Acronyms
+
+|Acronym|Full Name|Description|
+|---|---|---|
+|CCB|Change Control Board|Committee responsible for evaluating and approving/denying change requests|

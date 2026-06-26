@@ -14,4 +14,8 @@
 	- Gap Analysis
 	- Zero Trust
 	- Physical Security Controls
+	- Deception and Disruption
+- 1.3
+	- Change Management
+	- Technical Change management
 
