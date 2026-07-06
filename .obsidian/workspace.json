@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d53afee6ba569a3f",
+        "id": "d54cebb7488b6876",
         "type": "tabs",
         "children": [
           {
-            "id": "bb8d3e4e57a9ae1b",
+            "id": "b0c17500a25e8528",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
+                "file": "Work/Final Development Tasks Before UAT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "General Security Concepts"
-            }
-          },
-          {
-            "id": "59f9fe7b334e1645",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "CompTIA Security+ MOC"
+              "title": "Final Development Tasks Before UAT"
             }
           }
         ]
@@ -92,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "82669b7c693bc7c3",
@@ -194,11 +179,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bb8d3e4e57a9ae1b",
+  "active": "b0c17500a25e8528",
   "lastOpenFiles": [
-    "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
+    "Work/UAT Readiness Checklist.md",
+    "Work/Final Development Tasks Before UAT.md",
+    "Assets/Screenshot 2026-06-19 090516.png",
+    "Untitled.base",
     "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
-    "Screenshot 2026-06-19 090516.png",
+    "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
     "Assets/Screenshot 2026-05-31 100543.png",
     "Assets/Screenshot 2026-05-31 094854.png",
     "Assets/Screenshot 2026-05-30 220017 1.png",
@@ -207,7 +195,6 @@
     "Assets/Screenshot 2026-05-30 220407.png",
     "Computer Science/Courses + Certs/Security+/assets",
     "Screenshot 2026-05-30 220017.png",
-    "Untitled.base",
     "Computer Science/Courses + Certs/Security+/How to pass CompTIA Security+.md",
     "Untitled 2.base",
     "Untitled 1.base",
@@ -240,7 +227,6 @@
     "Hair Care/Routine.md",
     "Inbox/Understanding Healthy Eating.md",
     "Books to Read.md",
-    "Work/Final Development Tasks Before UAT.md",
     "Untitled.canvas"
   ]
 }
