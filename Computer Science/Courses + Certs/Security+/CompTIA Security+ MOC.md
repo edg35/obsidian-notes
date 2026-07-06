@@ -18,4 +18,8 @@
 - 1.3
 	- Change Management
 	- Technical Change management
+- 1.4
+	- Public Key Infrastructure
+	- Encrypting Data
+	- Key Exchange
 

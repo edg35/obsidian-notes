@@ -594,3 +594,85 @@ Every change carries risk in both directions:
 |Acronym|Full Name|Description|
 |---|---|---|
 |CCB|Change Control Board|Committee responsible for evaluating and approving/denying change requests|
+
+## Technical Change Management
+
+### Allow Lists and Deny Lists
+
+**Allow list**: Only applications explicitly named on the list are permitted to run — everything else is blocked by default.
+
+**Deny list**: All applications are permitted to run except those explicitly named — more flexible than an allow list.
+
+- Antivirus/anti-malware is conceptually a large deny list — everything runs except code identified as malicious
+- Technicians may be tasked with adding/removing entries from either list as part of a change control
+
+### Scope of Change
+
+- Technicians are limited to changes explicitly listed in the approved change control document
+- Do **not** use a maintenance window to make unrelated changes
+- **Scope creep exception**: If completing the primary change requires an undocumented secondary change (e.g., modifying a config file to apply a driver update), policies may allow the technician to make that call — must be well-documented
+
+### Downtime and Maintenance Windows
+
+- Changes don't always cause downtime, but a window is typically reserved to communicate potential unavailability
+- Changes should be made during **non-production/off hours** whenever possible
+- **24/7 environments**: Use a primary/secondary failover approach:
+    1. Switch users to the secondary system
+    2. Update the primary system
+    3. Switch back seamlessly (usually automated)
+    4. If problems arise, switch back to the unchanged secondary system
+- Notify stakeholders of potential downtime via email or a centralized change control calendar
+
+### Reboots and Service Restarts
+
+Three levels of restart depending on the change:
+
+1. **Full system reboot** — required when a new config only takes effect on restart; also validates power-cycle recovery behavior
+2. **Service/daemon restart** — faster; done via Windows Services, Task Manager, or Linux daemon commands
+3. **Application restart** — users close and reopen the app to load the updated executable
+
+### Legacy Applications
+
+**Legacy application**: An application that has been running for a long time, has no planned replacement, and is often no longer supported by the original developer.
+
+- Often undocumented with informal warnings like "don't touch this system"
+- Approach: Document how the application is installed and configured to bring it into the normal support cycle
+- May have idiosyncrasies specific to running on older OSes
+- Documenting the system makes the technician the internal expert and improves org-wide supportability
+
+### Dependencies
+
+**Dependency**: A condition where one application or service must be updated or installed before another can be installed or updated.
+
+- Complicates change control — a single change may require updating multiple services
+- Dependencies can exist **across systems** (e.g., firewall management software requires all firewalls to be on a new code version first)
+- Must be identified and sequenced before the change window begins
+
+### Documentation Requirements
+
+- Every change potentially makes existing documentation outdated
+- Change management processes should **require documentation updates** as part of the change itself
+- Documentation to update may include:
+    - Network diagrams and topology charts
+    - IP address records and configurations
+    - Procedures for managing new/upgraded applications
+
+### Version Control
+
+**Version control**: A system for tracking changes to code, configurations, and software over time; enables rollback to a previous version if a change causes issues.
+
+- Tracks changes to router configs, OS patches, registry changes, application updates, etc.
+- Some applications and OSes have version control built in
+- Third-party version control systems can be used when native support is absent
+
+#### Key Terms Summary
+
+|Term|Definition|
+|---|---|
+|Allow list|Only listed apps are permitted to run|
+|Deny list|All apps permitted except those listed|
+|Legacy application|Long-running, often unsupported app with no planned replacement|
+|Dependency|Prerequisite service/app that must be updated before the target change|
+|Version control|System for tracking and reverting changes to configs/software/code|
+
+# 1.4
