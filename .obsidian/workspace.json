@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Work/AI Help Desk/AI Helpdesk — Feature Plan & V1 Game Plan.md",
+                "file": "Work/AI Help Desk/features/Teams Ticket-Reply AI Agent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI Helpdesk — Feature Plan & V1 Game Plan"
+              "title": "Teams Ticket-Reply AI Agent"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "82669b7c693bc7c3",
@@ -181,12 +182,15 @@
   },
   "active": "9f028132d36a0406",
   "lastOpenFiles": [
+    "Computer Science/Challenges/TryHackMe Missing Person.md",
+    "Work/AI Help Desk/features/Teams Ticket-Reply AI Agent.md",
+    "Work/AI Help Desk/AI Helpdesk — Feature Plan & V1 Game Plan.md",
+    "Computer Science/Challenges",
+    "Work/AI Help Desk/features/2026-07-03-llm-integration.md",
     "Assets/Screenshot 2026-06-19 090516.png",
     "Work/2026-07-03-llm-integration.md",
     "Work/AI Help Desk/features",
-    "Work/AI Help Desk/AI Helpdesk — Feature Plan & V1 Game Plan.md",
     "Work/AI Help Desk",
-    "Work/AI Help Desk/features/2026-07-03-llm-integration.md",
     "Computer Science/Courses + Certs/Security+/CompTIA Security+ MOC.md",
     "Computer Science/Courses + Certs/Security+/General Security Concepts.md",
     "Screenshot 2026-06-19 090516.png",
@@ -211,7 +215,6 @@
     "Computer Science/AWS/solution arch/chapters/Leveraging the Cloud for Digital Transformation.md",
     "Screenshot 2025-05-02 at 4.44.00 PM.png",
     "Computer Science/Projects/Veritas.md",
-    "Computer Science/AWS/solution arch/images/Screenshot 2025-04-21 at 9.53.15 PM.png",
     "Computer Science/AWS/solution arch/chapters/Understanding the AWS Well-Architected Framework and Getting Certified.md",
     "Computer Science/AWS/cloud practitoner/Security and Compliance.md",
     "Computer Science/AWS/solution arch/concepts/Proof of Concept.md",
@@ -225,8 +228,6 @@
     "Cloud computing models.md",
     "Computer Science/Saas/Concepts/SaaS.md",
     "Computer Science/Saas/Chapters/The Playbook For Building a Multi-Million Dollar SaaS.md",
-    "Computer Science/AWS/solution arch/concepts",
-    "Hair Care/Routine.md",
     "Untitled.canvas"
   ]
 }

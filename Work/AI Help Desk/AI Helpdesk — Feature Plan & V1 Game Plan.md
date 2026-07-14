@@ -36,7 +36,7 @@ This is the flow every V1 ticket serves. Keep it in mind when writing acceptance
 
 The prerequisites everything else depends on. Build these first.
 
-- **A1 [V1] — Pending-action / message↔ticket correlation model.** New table (e.g. `pending_actions`) plus a proper TS type. Records: the outbound Teams message/card, its `teams_message_id`, the `ticket_id` it concerns, the conversation it was sent to, the action type, a state (`pending` → `applied` / `cancelled` / `expired`), the LLM draft, and timestamps. This is what lets a later reply or button click resolve back to one ticket + one intended change. _Depends on: none. Blocks: A2, B2, D1–D4._
+- **A1 [V1] — Pending-action / message↔ticket correlation model.** New table (e.g. `pending_actions`) plus a proper TS type. Records: the outbound Teams message/card, its `teams_message_id`, the `ticket_id` it concerns, the conversation it was sent to, the action type, a state (`pending` → `applied` / `cancelled` / `expired`), the LLM draft, and timestamps. This is what lets a later reply or button click resolve back to one ticket + one intended change. _Depends on: none. Blocks: A2, B2, D1–D4. Note: include `org_id` from the start — see J1._
     
 - **A2 [V1] — Tag outbound messages/cards with their ticket.** When an alert card is sent, capture the returned Teams message id and persist the message↔ticket link (via A1). Today `sendCardToConversation` logs the card but not a correlation key. _Depends on: A1._
     
@@ -143,6 +143,92 @@ Led the meeting, but largely separable from the core loop. Recommend treating as
 
 ---
 
+# Phase 2 — Multi-tenant web portal
+
+The Phase 1 loop above proves the product with **your own MSP as the first tenant**. Phase 2 turns it into something other companies log into and configure themselves: sign in with a Microsoft account, get walked through onboarding, and run their company's configuration from a portal.
+
+**The one thing to pull forward into V1:** make the data model multi-tenant _now_. Adding an `org_id` column while there's exactly one org is nearly free; retrofitting tenant scoping onto live tables full of data later is the expensive, error-prone path. So J1/J2 below are tagged **[V1]** even though the rest of the portal is **[Phase 2]**. Everything else — auth, portal UI, onboarding — can follow once the loop works.
+
+Tags in this phase: **[V1]** = pull forward into the first version, **[Phase 2]** = the portal build itself, **[Post-V1]** = later.
+
+---
+
+## Epic J — Tenancy foundation
+
+- **J1 [V1] — `organizations` table + `org_id` on every tenant-scoped table.** Add an org concept and stamp `org_id` on `tickets`, `conversations`, `conversation_messages`, `pending_actions`, the picklist lookup tables, and anything else per-company — even though only one org (yours) exists at first. This is the cheap-now / painful-later decision. _Depends on: none. Do before/with A1._
+    
+- **J2 [V1] — Enforce org scoping on all data access.** Every query must be constrained to one org so nothing can leak across tenants. Decide the mechanism: a query helper/repository layer that always injects `org_id`, or Postgres **Row-Level Security**. RLS is stronger but changes how connections are set up. _Depends on: J1._
+    
+- **J3 [Phase 2] — Runtime tenant resolution.** Map an inbound Teams activity to its org (via the Teams/AAD tenant id) and map each Autotask instance to its org, so the bot and jobs act as the correct tenant. Today the jobs read one global config. _Depends on: J1, K1._
+    
+- **J4 [Phase 2] — Per-org job fan-out.** `jobScheduler` should iterate active orgs and run each escalation/sync job with that org's own config, instead of the current global env-var-driven single run. _Depends on: J3, K1._
+    
+
+---
+
+## Epic K — Per-tenant configuration store
+
+- **K1 [Phase 2] — Move config from `.env` to per-org DB config.** Autotask connection settings, queue filters (`EXCLUDED_QUEUES` etc.), business hours, alert categories, and alert routing become per-org rows instead of process-wide env vars. Shared infra (the bot host, the DB) stays env-driven; per-company settings move to the DB. _Depends on: J1._
+    
+- **K2 [Phase 2] — Encrypt tenant secrets at rest.** Each org's Autotask API secret (and any Teams secrets) must be encrypted — Azure Key Vault references or column-level encryption, never plaintext columns. The portal collects them; the app resolves them at use time. _Depends on: K1._
+    
+- **K3 [Phase 2] — Connection test during onboarding.** A "Test connection" action that makes a live Autotask (and Teams) call to validate an org's credentials before activating them. _Depends on: K1, K2._
+    
+- **K4 [decision] — Shared vs. per-tenant Azure OpenAI.** Decide whether the LLM is a product-owned resource with per-org usage tracking, or bring-your-own per tenant. Affects K1's schema and cost model.
+    
+
+---
+
+## Epic L — Portal authentication & access
+
+- **L1 [Phase 2] — Microsoft sign-in.** OIDC login with Entra ID (MSAL). Since your customers are Microsoft shops, "sign in with Microsoft" is the natural front door. **Option:** Clerk is already in your connectors and supports Microsoft OAuth — worth weighing against native MSAL (see decisions). _Depends on: none._
+    
+- **L2 [Phase 2] — User↔org membership + roles.** A signed-in user resolves to their org(s) and a role (admin / member). Admins configure; members may just view. _Depends on: L1, J1._
+    
+- **L3 [Phase 2] — Protect the API surface.** The existing `/api/*` Express routes are **currently unauthenticated**. Gate them behind portal auth + org scoping before anything is exposed externally. Security blocker for going multi-tenant. _Depends on: L1, J2._
+    
+- **L4 [Post-V1] — Invite & manage users within an org.**
+    
+
+---
+
+## Epic M — Portal & onboarding
+
+- **M1 [Phase 2] — Portal scaffold (frontend + API).** Stand up the portal app. **Decision:** extend the current Node/Express app with a React/Next front end, or build a separate ASP.NET Core API + front end. Either way it shares the same Postgres. (Your AuthHR experience maps cleanly to the ASP.NET Core option; keeping it in Node keeps the stack singular.) _Depends on: L1._
+    
+- **M2 [Phase 2] — Onboarding wizard.** Guided flow: sign in → create org → connect Autotask → connect Teams → set queues / business hours / categories → run the connection test → activate. This is the "put them through an onboarding process" piece. _Depends on: M1, K1, K3, N3._
+    
+- **M3 [Phase 2] — Configuration management screens.** Post-onboarding editing of everything M2 collected — the "run all the company configurations from there" surface. _Depends on: M1, K1._
+    
+- **M4 [Post-V1] — Activity dashboard.** Per-tenant loop metrics, ticket/alert volume, health. The `/api/*` routes already read like scaffolding for exactly this.
+    
+- **M5 [Post-V1] — Billing / plans / subscription management.**
+    
+
+---
+
+## Epic N — Bot & Teams multi-tenancy
+
+- **N1 [Phase 2] — Multi-tenant bot registration.** Configure the Entra bot app as multi-tenant so one bot serves many client tenants, and map each Teams tenant to an org (pairs with J3). Confirm whether one shared registration or per-client registration is the model. _Depends on: J3._
+    
+- **N2 [Phase 2] — Per-org proactive send addressing.** Proactive escalations must go out with the right service URL / credentials / conversation reference for each tenant. Extends A3 (durable conversation refs) into a per-org store. _Depends on: A3, J3._
+    
+- **N3 [Phase 2] — Teams provisioning during onboarding.** Admin consent + installing the Teams app into the client's tenant as part of M2. _Depends on: N1._
+    
+
+---
+
+## Open decisions (Phase 2)
+
+- **Phasing** — confirm the recommendation: pull only the tenancy _schema_ (J1/J2) into V1, defer the portal. Or do you need to onboard external companies sooner, changing the priority?
+- **Auth provider** — native MSAL/Entra vs. Clerk (already connected). Trade-off: control/no-dependency vs. speed.
+- **Portal stack** — extend Node/Express + React/Next vs. a separate ASP.NET Core API.
+- **Tenant isolation** — Postgres Row-Level Security vs. application-layer scoping (J2).
+- **Bot model** — single multi-tenant bot registration vs. per-client (N1).
+- **Azure OpenAI** — shared product resource vs. per-tenant (K4).
+
+---
+
 ## V1 Definition of Done
 
 The loop works end to end for a real ticket:
@@ -171,6 +257,8 @@ The loop works end to end for a real ticket:
 9. Then **F** (categories), then G/H/C4 backlog.
 
 Epics A, C, and E can be developed in parallel by different devs once A1's table shape is agreed; D depends on all three converging.
+
+**Phase 2 sequencing.** Do **J1 + J2 inside Phase 1** — bake `org_id` and org scoping in while there's one org and nothing to migrate. Then, after the loop proves out: **L** (auth) and **K** (config store) come before **M** (the portal needs both), **J3/J4 + N** are what actually let multiple live tenants run at once, and **K2** (secret encryption) must land before any real client credentials are stored.
 
 ---
 
